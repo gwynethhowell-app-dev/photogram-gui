@@ -8,11 +8,11 @@ class UsersController < ApplicationController
       render({ :template => "user_templates/index.html.erb"})
     end
   
-    def details 
+    def show
       url_username = params.fetch("user_id")
       matching_users = User.where({ :username => url_username})
       @the_user = matching_users.at(0)
-      render({ :template => "user_templates/show_details.html.erb"})
+      render({ :template => "user_templates/show.html.erb"})
     end 
   
     def add_user
